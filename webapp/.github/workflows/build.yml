@@ -14,8 +14,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - name: Navigate to webapp directory
-        run: cd webapp
       - name: Install dependencies
         run: yarn install
       - name: Lint the code
