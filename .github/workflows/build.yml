@@ -18,3 +18,8 @@ jobs:
         run: yarn install
       - name: Lint the code
         run: yarn lint
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          tags: sennedemaegd/webapp:latest
