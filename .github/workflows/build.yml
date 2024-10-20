@@ -33,6 +33,6 @@ jobs:
           push: true
           tags: sennedemaegd/webapp:latest
       - name: Start webapp before tests
-        run: docker compose up -d --build
+        run: docker compose up -d
       - name: Run tests
         run: yarn test
