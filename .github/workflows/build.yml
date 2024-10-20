@@ -34,3 +34,5 @@ jobs:
           tags: sennedemaegd/webapp:latest
       - name: Start webapp before tests
         run: docker compose up -d webapp database
+      - name: Run tests
+        run: yarn test
