@@ -35,4 +35,4 @@ jobs:
       - name: Start webapp before tests
         run: docker compose up -d webapp database
       - name: Run tests
-        run: yarn test
+        run: docker compose run test
