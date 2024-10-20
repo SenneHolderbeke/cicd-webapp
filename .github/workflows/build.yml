@@ -32,11 +32,9 @@ jobs:
         with:
           push: true
           tags: sennedemaegd/webapp:latest
-      - name: Clean up old containers
-        run: docker compose down
       - name: Start webapp before tests
         run: docker compose up -d webapp database
       - name: Run tests
-        run: docker compose run test
+        run: yarn test
       - name: Clean up containers
         run: docker compose down
