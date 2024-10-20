@@ -32,17 +32,15 @@ jobs:
         with:
           push: true
           tags: sennedemaegd/webapp:latest
-      - name: Start database
-        run: docker compose up -d database
-      - name: Wait for database
+      - name: Start webapp before tests
+        run: docker compose up -d webapp database
+      - name: Waiting for Webapp and Database
         run: |
-          echo "Waiting for database to be healthy..."
-          until [ "$(docker inspect -f '{{.State.Health.Status}}' cicd-webapp-database-1)" == "healthy" ]; do
+          echo "Waiting for webapp to be healthy..."
+          until [ "$(docker inspect -f '{{.State.Health.Status}}' cicd-webapp-webapp-1)" == "healthy" ]; do
             sleep 1
           done
-      - name: Start webapp
-        run: docker compose up -d webapp
       - name: Run tests
-        run: docker compose run --rm test
+        run: docker compose run test
       - name: Clean up containers
         run: docker compose down
