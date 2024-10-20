@@ -22,6 +22,8 @@ jobs:
         run: npx eslint . --no-error-on-unmatched-pattern
       - name: Lint the code
         run: yarn lint
+      - name: Start webapp before tests
+        run: docker compose up -d --build
       - name: Run tests
         run: yarn test
       - name: Log in to Docker Hub.
