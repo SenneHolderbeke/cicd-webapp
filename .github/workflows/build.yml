@@ -33,4 +33,4 @@ jobs:
           push: true
           tags: sennedemaegd/webapp:latest
       - name: Start webapp before tests
-        run: docker compose up -d
+        run: docker compose up -d webapp database

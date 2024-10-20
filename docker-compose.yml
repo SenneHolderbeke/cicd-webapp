@@ -1,6 +1,6 @@
 services:
   webapp:
-    image: sennedemaegd/webapp:latest
+    image: sennedemaegd/webapp
     ports:
       - "3000:3000"
     environment:
