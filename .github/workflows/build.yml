@@ -16,6 +16,10 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: yarn install
+      - name: Installing ESLint 8.45.0
+        run: npm install eslint@8.45.0
+      - name: Check errors in code
+        run: npx eslint . --no-error-on-unmatched-pattern
       - name: Lint the code
         run: yarn lint
       - name: Log in to Docker Hub.
