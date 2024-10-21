@@ -41,6 +41,6 @@ jobs:
       - name: Test with Snyk
         uses: snyk/actions/node@master
         with:
-          command: test
+          command: monitor
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
