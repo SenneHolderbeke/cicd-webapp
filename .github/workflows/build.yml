@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -38,9 +38,9 @@ jobs:
       #   run: docker compose run test
       # - name: Clean up containers
       #   run: docker compose down
-      # - name: Test with Snyk
-      #   uses: snyk/actions/node@master
-      #   with:
-      #     command: monitor
-      #   env:
-      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Test with Snyk
+        uses: snyk/actions/node@master
+        with:
+          command: monitor
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
