@@ -38,9 +38,9 @@ jobs:
       #   run: docker compose run test
       # - name: Clean up containers
       #   run: docker compose down
-      - name: Test with Snyk
-        uses: snyk/actions/node@master
-        with:
-          command: monitor
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      # - name: Test with Snyk
+      #   uses: snyk/actions/node@master
+      #   with:
+      #     command: monitor
+      #   env:
+      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
